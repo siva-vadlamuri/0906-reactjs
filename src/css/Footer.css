@@ -1,0 +1,11 @@
+.footer__main {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100vw;
+  color: #f9f9f9;
+}
+/* 1rem = 16px */
+.footer__main p {
+  font-size: 1.5rem;
+}
