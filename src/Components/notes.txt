@@ -1,0 +1,21 @@
+Virtual DOM 
+
+REAL DOM 
+When we updating the DOM, DOM will repaint 
+1) It needs to parse the HTML, 
+
+How React is Improving The performance
+
+React Team has seen the all the drawback of normal javascript which are impacting the application performance
+
+DOM Manipulations, Updating DOM 
+
+Dont Touch The DOM
+
+There Will be two Virtual DOMs 
+1) Previous State And Previous Props 
+2) Current State and Current Props
+
+
+When the Component will be rerendered?
+When the props or state is changed the component will be rerendered

@@ -24,6 +24,9 @@ class CounterClass extends Component {
   state = {
     count: 0,
   };
+  static getDerivedStateFromProps(props, state) {
+    console.log("Get derived state Counter Class");
+  }
   increment() {
     //   You cannot update the state directly
     // Never mutate (change) the state directly
@@ -49,6 +52,7 @@ class CounterClass extends Component {
   //   this will point to current object
 
   render() {
+    console.log("Counter Class Render");
     return (
       <div>
         <div>

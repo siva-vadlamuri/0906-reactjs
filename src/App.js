@@ -8,6 +8,7 @@ import Footer from "./Components/Footer";
 import GreetUser from "./Components/GreetUser";
 import ListItems from "./Components/ListItems";
 import User from "./Components/User";
+import Validation from "./Components/Validation";
 // import CounterClass from "./Components/CounterClass";
 
 function App() {
@@ -18,8 +19,9 @@ function App() {
       {/* Main */}
       {/* <CounterClass /> */}
       {/* <GreetUser /> */}
-      <ListItems />
-      <User />
+      {/* <ListItems /> */}
+      {/* <User data="Some Data" /> */}
+      <Validation />
       {/* Footer */}
       <Footer />
       {/* <p>React 18</p> */}

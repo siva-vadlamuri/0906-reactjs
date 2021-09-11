@@ -1,4 +1,5 @@
 import React from "react";
+import CounterClass from "./CounterClass";
 
 class User extends React.Component {
   // properies & Method
@@ -19,19 +20,52 @@ class User extends React.Component {
   // }
   state = {
     users: [{}],
+    username: "",
+    data: "",
+    updateTheData: false,
   };
+  static getDerivedStateFromProps(props, state) {
+    console.log(
+      "Get Derived State From Props" +
+        JSON.stringify(props) +
+        JSON.stringify(state)
+    );
+    // this.setState({ data: props.data });
+    return state;
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("Should Component Update");
+    return true;
+  }
+
+  // Sychronous and Asynchronous
   async getUserData() {
+    // Await --> It will wait untill the promise either resolved or rejected
     const response = await fetch("http://jsonplaceholder.typicode.com/users");
     console.log(response);
     const data = await response.json();
     console.log(data);
     this.setState({ users: data });
   }
+  // AJAX
+  // XMLHttpRequest
+  // es 6 promises Resolved State or Rejected
+  // es 7 ASYNC and AWAIT
+
   componentDidMount() {
     console.log("Component Did Mount");
     // fetch is browser method
     this.getUserData();
     // the componentDidMount  method rus after the component output has been rendered to the DOM
+  }
+  componentDidUpdate() {
+    console.log("Component DID update");
+    // this.setState({ updateTheData: false });
+    // You Can make an Asynchronous Call to Server
+  }
+  componentWillUnmount() {
+    console.log("Component WILL Unmount");
   }
   //
   render() {
@@ -39,6 +73,7 @@ class User extends React.Component {
     return (
       <div className="ml-2">
         {/* <h1>User Component</h1> */}
+        {/* <CounterClass /> */}
 
         <table>
           <thead>
@@ -60,7 +95,7 @@ class User extends React.Component {
           </thead>
           <tbody>
             {this.state.users.map((user) => (
-              <tr>
+              <tr key={user.id}>
                 <td>{user.id}</td>
                 <td>{user.name}</td>
                 <td>{user.username}</td>
@@ -72,6 +107,13 @@ class User extends React.Component {
             ))}
           </tbody>
         </table>
+        <button
+          onClick={() => {
+            this.setState({ updateTheData: true });
+          }}
+        >
+          Get The Data Again
+        </button>
       </div>
     );
   }
