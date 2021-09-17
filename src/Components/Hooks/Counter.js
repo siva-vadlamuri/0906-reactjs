@@ -27,7 +27,8 @@ function Counter() {
     // console.log(e);
     const { name, value } = e.target;
     console.log(value);
-    setForm({ [name]: value });
+    // ... varibale name
+    setForm({ ...form, [name]: value });
   };
   //   1st Value, 2nd Method to update the State
 

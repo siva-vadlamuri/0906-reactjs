@@ -15,6 +15,11 @@ import About from "./Components/About/About";
 import { Route } from "react-router-dom";
 import Blog from "./Components/Blog/Blog";
 import Counter from "./Components/Hooks/Counter";
+import Todos from "./Components/Hooks/Todo";
+import UseEffectHook from "./Components/Hooks/UseEffectHook";
+import Pagination from "./Components/Hooks/Pagination";
+import Products from "./Components/Products/Products";
+import Product from "./Components/Products/Product";
 // import CounterClass from "./Components/CounterClass";
 
 function App() {
@@ -23,7 +28,10 @@ function App() {
       {/* Header */}
       <Header />
 
-      <Counter />
+      {/* <Counter /> */}
+      {/* <Todos /> */}
+      {/* <UseEffectHook /> */}
+      {/* <Pagination /> */}
 
       {/* Routes Goes Here */}
 
@@ -33,6 +41,8 @@ function App() {
         <Route path="/about" exact component={About} />
         <Route path="/blog" exact component={Blog} />
         <Route path="/contactus" component={Validation} />
+        <Route path="/products" component={Products} />
+        <Route path="/product/:id" component={Product} />
       </div>
 
       {/* Router Ends Here */}
@@ -44,7 +54,7 @@ function App() {
       {/* <User data="Some Data" /> */}
       {/* <Validation /> */}
       {/* Footer */}
-      <Footer />
+      {/* <Footer /> */}
       {/* <p>React 18</p> */}
       {/* <p className="error">Error Occured in App.js</p> */}
       {/* <button className="btn btn-primary">Button</button> */}

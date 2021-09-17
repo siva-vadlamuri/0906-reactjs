@@ -45,6 +45,11 @@ export class Header extends Component {
                   Contact Us
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/products">
+                  Products
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>
