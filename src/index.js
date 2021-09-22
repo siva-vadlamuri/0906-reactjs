@@ -5,6 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { Store } from "./redux/Store";
+
+
 // createRoot
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
@@ -20,7 +24,9 @@ const root = ReactDOM.createRoot(container);
 
 root.render(
   <BrowserRouter>
+  <Provider store={Store} >
     <App />
+    </Provider>
     {/* <Home /> */}
     {/* <Route path="/" exact component={Home} />
     <Route path="/contact" component={Contact} /> */}

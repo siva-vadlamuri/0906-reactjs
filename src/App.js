@@ -20,6 +20,7 @@ import UseEffectHook from "./Components/Hooks/UseEffectHook";
 import Pagination from "./Components/Hooks/Pagination";
 import Products from "./Components/Products/Products";
 import Product from "./Components/Products/Product";
+import UseReducerHook from "./Components/Hooks/UseReducerHook";
 // import CounterClass from "./Components/CounterClass";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
     <div>
       {/* Header */}
       <Header />
+      <UseReducerHook/>
 
       {/* <Counter /> */}
       {/* <Todos /> */}
@@ -34,6 +36,7 @@ function App() {
       {/* <Pagination /> */}
 
       {/* Routes Goes Here */}
+      
 
       <div>
         <Route path="/" exact component={Home} />
