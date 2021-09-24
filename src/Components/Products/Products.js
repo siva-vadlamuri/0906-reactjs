@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { setProducts } from "../../redux/ProductActions/ProductActions";
+import { fetchProducts, setProducts } from "../../redux/ProductActions/ProductActions";
 import "./Products.css";
 const Products = () => {
   const [productsData, setProductsData] = useState([{
@@ -9,28 +9,30 @@ const Products = () => {
     name : 'Product'
   }]);
   const dispatch = useDispatch();
-   const products =  useSelector((state)=>state.products);
+   const products =  useSelector((state)=>state.productsData.products);
    console.log(products);
 
   const getTheProductsFromServer = async () => {
-    const response = await fetch("https://fakestoreapi.com/products/");
-    const data = await response.json();
+    // const response = await fetch("https://fakestoreapi.com/products/");
+    // const data = await response.json();
     // console.log(setProducts(data));
-    console.log(setProducts(data))
-    dispatch(setProducts(data)); 
+    // console.log(setProducts(data))
+    // dispatch(setProducts(data)); 
     // setProducts(data);
   };
 
   useEffect(() => {
-    getTheProductsFromServer();
-    setProductsData(products);
+    // console.log(fetchProducts());
+    dispatch(fetchProducts()); 
+    // getTheProductsFromServer();
+    // setProductsData(products);
   }, []);
 
   return (
     <div>
       <div className="container py-5">
         <div className="row">
-          {productsData &&  productsData?.map((product) => (
+          {products &&  products?.map((product) => (
            
             <div className="col-md-3">
               <Link to={`/product/${product.id}`}>

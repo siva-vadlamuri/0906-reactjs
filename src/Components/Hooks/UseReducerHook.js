@@ -19,11 +19,16 @@ function UseReducerHook() {
                 return  [...state,action.payload]
             case ACTIONTYPE.DELETE_TODO:
                 return state.filter((todo)=>{
+
                     if(todo.id!==action.payload){
                         return todo;
                     }
                 })    
         }
+        // 123 != 234
+        // 124! = 234
+        // 125!= 234
+        // 234!=234
 
     }
 
