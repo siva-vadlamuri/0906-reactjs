@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
+import { addToCart } from "../../redux/ProductActions/ProductActions";
+import { useDispatch,useSelector } from "react-redux";
 
 const Product = (props) => {
+
   const [product, setProduct] = useState({});
+  const dispatch = useDispatch();
   //   console.log(props);
   const getSingleProduct = async () => {
     const id = props.match.params.id;
@@ -11,6 +15,10 @@ const Product = (props) => {
     // console.log(data);
     setProduct(data);
   };
+
+  const handleClick = ()=>{
+     dispatch(addToCart(product));
+  }
 
   useEffect(() => {
     getSingleProduct();
@@ -31,6 +39,9 @@ const Product = (props) => {
             <div>
               <h2>{product?.title}</h2>
               <p>{product?.description}</p>
+              <div>
+                <button className="btn btn-info" onClick={handleClick}>Add</button>
+              </div>
             </div>
           </div>
         </div>

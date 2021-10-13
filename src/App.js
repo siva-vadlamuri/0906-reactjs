@@ -21,6 +21,7 @@ import Pagination from "./Components/Hooks/Pagination";
 import Products from "./Components/Products/Products";
 import Product from "./Components/Products/Product";
 import UseReducerHook from "./Components/Hooks/UseReducerHook";
+import CartPage from "./Components/Products/CartPage";
 // import CounterClass from "./Components/CounterClass";
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
     <div>
       {/* Header */}
       <Header />
-      <UseReducerHook/>
+      {/* <UseReducerHook/> */}
 
       {/* <Counter /> */}
       {/* <Todos /> */}
@@ -46,6 +47,7 @@ function App() {
         <Route path="/contactus" component={Validation} />
         <Route path="/products" component={Products} />
         <Route path="/product/:id" component={Product} />
+        <Route path="/cart"  component={CartPage} />
       </div>
 
       {/* Router Ends Here */}

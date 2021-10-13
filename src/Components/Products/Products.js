@@ -9,17 +9,19 @@ const Products = () => {
     name : 'Product'
   }]);
   const dispatch = useDispatch();
+  const data =  useSelector((state)=>state.productsData);
+  console.log(data);
    const products =  useSelector((state)=>state.productsData.products);
-   console.log(products);
+  //  console.log(products);
 
-  const getTheProductsFromServer = async () => {
-    // const response = await fetch("https://fakestoreapi.com/products/");
-    // const data = await response.json();
-    // console.log(setProducts(data));
-    // console.log(setProducts(data))
-    // dispatch(setProducts(data)); 
-    // setProducts(data);
-  };
+  // const getTheProductsFromServer = async () => {
+  //   // const response = await fetch("https://fakestoreapi.com/products/");
+  //   // const data = await response.json();
+  //   // console.log(setProducts(data));
+  //   // console.log(setProducts(data))
+  //   // dispatch(setProducts(data)); 
+  //   // setProducts(data);
+  // };
 
   useEffect(() => {
     // console.log(fetchProducts());
